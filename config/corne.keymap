@@ -70,22 +70,7 @@
 &kp TAB                       &kp Q           &kp W           &kp E             &kp R               &kp T        &kp Y    &kp U                &kp I              &kp O            &kp P               &kp BSPC
 &mt LG(LA(LS(LCTRL))) ESCAPE  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LEFT_SHIFT D  &hm LEFT_CONTROL F  &kp G        &kp H    &hm RIGHT_CONTROL J  &hm RIGHT_SHIFT K  &hm RIGHT_ALT L  &hm RIGHT_GUI SEMI  &mt RG(RA(RS(RCTRL))) ESCAPE
 &kp LSHFT                     &kp Z           &kp X           &kp C             &kp V               &kp B        &kp N    &kp M                &kp COMMA          &kp DOT          &kp FSLH            &kp RIGHT_SHIFT
-                                                              &mo 4             &mo 2               &kp SPACE    &kp RET  &mo 1                &mo 3
-            >;
-        };
-
-        Nav {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
-            bindings = <
-&kp ESC  &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans          &kp PAGE_UP    &kp HOME        &kp UP_ARROW    &kp END    &trans  &kp DEL
-&trans   &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans          &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans  &caps_word
-&trans   &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0    &trans         &trans          &trans          &trans     &trans  &trans
-                               &kp LGUI      &trans        &kp SPACE       &kp RET        &trans          &kp RALT
+                                                              &mo 4             &mo 1               &kp SPACE    &kp RET  &mo 2                &mo 3
             >;
         };
 
@@ -104,9 +89,24 @@
             >;
         };
 
+        Nav {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
+            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
+
+            bindings = <
+&kp ESC  &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans          &kp PAGE_UP    &kp HOME        &kp UP_ARROW    &kp END    &trans  &kp DEL
+&trans   &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans          &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans  &caps_word
+&trans   &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0    &trans         &trans          &trans          &trans     &trans  &trans
+                               &kp LGUI      &trans        &kp SPACE       &kp RET        &trans          &kp RALT
+            >;
+        };
+
         System {
             bindings = <
-&trans          &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans          &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &studio_unlock
 &bt BT_CLR      &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0    &trans  &trans  &trans  &trans  &trans  &trans
 &bt BT_CLR_ALL  &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
                                             &trans        &trans        &trans          &trans  &trans  &trans
