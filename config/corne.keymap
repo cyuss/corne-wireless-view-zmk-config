@@ -5,8 +5,8 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
     behaviors {
@@ -70,7 +70,7 @@
 &kp TAB                       &kp Q           &kp W           &kp E             &kp R               &kp T        &kp Y    &kp U                &kp I              &kp O            &kp P               &kp BSPC
 &mt LG(LA(LS(LCTRL))) ESCAPE  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LEFT_SHIFT D  &hm LEFT_CONTROL F  &kp G        &kp H    &hm RIGHT_CONTROL J  &hm RIGHT_SHIFT K  &hm RIGHT_ALT L  &hm RIGHT_GUI SEMI  &mt RG(RA(RS(RCTRL))) ESCAPE
 &kp LSHFT                     &kp Z           &kp X           &kp C             &kp V               &kp B        &kp N    &kp M                &kp COMMA          &kp DOT          &kp FSLH            &kp RIGHT_SHIFT
-                                                              &kp LGUI          &mo 2               &kp SPACE    &kp RET  &mo 1                &kp RALT
+                                                              &mo 4             &mo 2               &kp SPACE    &kp RET  &mo 1                &mo 3
             >;
         };
 
@@ -82,10 +82,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESC       &bt BT_SEL 0  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp F8          &kp F1         &kp F2    &kp F3    &kp F4     &kp F5  &kp BSPC
-&bt BT_SEL 1  &bt BT_SEL 2  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp F9          &kp PAGE_UP    &kp HOME  &kp UP    &kp END    &kp F6  &caps_word
-&bt BT_SEL 3  &bt BT_SEL 4  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0    &kp PAGE_DOWN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp F7  &bt BT_CLR
-                                          &kp LGUI      &trans        &kp SPACE       &kp RET        &trans    &kp RALT
+&kp ESC  &trans  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans          &kp PAGE_UP    &kp HOME        &kp UP_ARROW    &kp END    &trans  &kp DEL
+&trans   &trans  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans          &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans  &caps_word
+&trans   &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0    &trans         &trans          &trans          &trans     &trans  &trans
+                               &kp LGUI      &trans        &kp SPACE       &kp RET        &trans          &kp RALT
             >;
         };
 
@@ -98,9 +98,27 @@
 
             bindings = <
 &kp ESCAPE  &kp AT           &kp COLON     &kp HASH           &kp DLLR  &kp PRCNT         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp DEL
-&trans      &kp EXCLAMATION  &kp QUESTION  &kp DOUBLE_QUOTES  &kp SQT   &kp UNDERSCORE    &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LESS_THAN     &kp GREATER_THAN   &kp PIPE       &trans
+&trans      &kp EXCLAMATION  &kp QUESTION  &kp DOUBLE_QUOTES  &kp SQT   &kp UNDERSCORE    &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LESS_THAN     &kp GREATER_THAN   &kp PIPE       &kp CAPSLOCK
 &trans      &kp GRAVE        &kp ASTERISK  &kp EQUAL          &kp PLUS  &kp MINUS         &kp CARET             &kp AMPS               &kp COMMA         &kp PERIOD         &kp SLASH      &trans
                                            &kp LGUI           &trans    &kp SPACE         &kp RET               &trans                 &kp RALT
+            >;
+        };
+
+        System {
+            bindings = <
+&trans          &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR      &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0    &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR_ALL  &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                                            &trans        &trans        &trans          &trans  &trans  &trans
+            >;
+        };
+
+        Macros {
+            bindings = <
+&trans  &trans  &trans  &trans         &trans  &trans    &trans  &trans  &trans     &trans      &trans  &trans
+&trans  &trans  &trans  &TRIPLE_QUOTE  &trans  &trans    &trans  &trans  &PTR_LEFT  &PTR_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans         &trans  &trans    &trans  &trans  &trans     &trans      &trans  &trans
+                        &trans         &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
